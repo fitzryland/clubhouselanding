@@ -37,7 +37,9 @@ $tablet-min-size: 768px !default;
 $desktop-min-size: 979px !default;
 $desktop-large-min-size: 1200px !default;
 
-
+// SIZES
+$widthSmall: 316px;
+$widthRegular: 600px;
 
 //                   ,,               ,,             gp
 // `7MMM.     ,MMF'  db               db             \/
@@ -90,6 +92,14 @@ $desktop-large-min-size: 1200px !default;
 	}
 }
 
+// APPEARENCE
+@mixin notecard-header($linecolor: $lightRed) {
+	background-image: -webkit-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
+	background-image: -moz-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
+	background-image: -o-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
+	background-image: -ms-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
+	background-image: linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
+}
 
 
 //                                                        ,,
@@ -138,9 +148,43 @@ img {
 	padding: 0 !important; // with box-sizing: border-box images should never have padding
 }
 
-header, section, footer {
-
+html {
+	background-color: #f0f4ff;
 }
+header, section, footer {
+	margin: 0 auto;
+	width: $widthSmall;
+	@include break(tablet-andup) {
+		width: $widthRegular;
+	}
+}
+header {
+	@include group();
+	.logo {
+		float: left;
+	}
+}
+.notecard {
+	-webkit-box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
+	box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
+	margin: 1em 0;
+
+	.header {
+		@include notecard-header();
+		margin: 0;
+		padding: 0.2em 0 0.1em 0.5em;
+	}
+	.body {
+		background-image: repeating-linear-gradient(0deg, #FFFFFF 0em, #FFFFFF 1.9em, $lightBlue 1.9em, $lightBlue 2em);
+		background-position: top;
+	}
+}
+
+
+
+
+
+
 
 //                                                    ,,        ,,
 //   .g8""8q.                                         db      `7MM

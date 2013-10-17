@@ -1,0 +1,152 @@
+// http://patorjk.com/software/taag/#p=display&f=Georgia11&t=Type%20Something%20
+// http://patorjk.com/software/taag/#p=display&f=4Max&t=Type%20Something%20
+// `7MMF'                                               mm
+//   MM                                                 MM
+//   MM  `7MMpMMMb.pMMMb. `7MMpdMAo.  ,pW"Wq.`7Mb,od8 mmMMmm ,pP"Ybd
+//   MM    MM    MM    MM   MM   `Wb 6W'   `Wb MM' "'   MM   8I   `"
+//   MM    MM    MM    MM   MM    M8 8M     M8 MM       MM   `YMMMa.
+//   MM    MM    MM    MM   MM   ,AP YA.   ,A9 MM       MM   L.   I8
+// .JMML..JMML  JMML  JMML. MMbmmd'   `Ybmd9'.JMML.     `MbmoM9mmmP'
+//                          MM
+//                        .JMML.
+@import 'normalize';
+
+//                                ,,           ,,        ,,
+// `7MMF'   `7MF'                 db          *MM      `7MM
+//   `MA     ,V                                MM        MM
+//    VM:   ,V ,6"Yb.  `7Mb,od8 `7MM   ,6"Yb.  MM,dMMb.  MM  .gP"Ya  ,pP"Ybd
+//     MM.  M'8)   MM    MM' "'   MM  8)   MM  MM    `Mb MM ,M'   Yb 8I   `"
+//     `MM A'  ,pm9MM    MM       MM   ,pm9MM  MM     M8 MM 8M"""""" `YMMMa.
+//      :MM;  8M   MM    MM       MM  8M   MM  MM.   ,M9 MM YM.    , L.   I8
+//       VF   `Moo9^Yo..JMML.   .JMML.`Moo9^Yo.P^YbmdP'.JMML.`Mbmmd' M9mmmP'
+// COLOR
+$burntOrange: #f1a85b;
+$lightBurntOrange: #ffd4a1;
+$darkBlue: #1f2e49;
+$lightBlue: #91beff;
+$lightRed: #e49999;
+$white: #FFFFFF;
+
+$shadow: hsla(0, 0, 0, 0.1);
+
+// FONT STACKS
+$marker: ''Permanent Marker', cursive';
+
+// BREAK POINTS
+$tablet-min-size: 768px !default;
+$desktop-min-size: 979px !default;
+$desktop-large-min-size: 1200px !default;
+
+
+
+//                   ,,               ,,             gp
+// `7MMM.     ,MMF'  db               db             \/
+//   MMMb    dPMM                                    `'
+//   M YM   ,M MM  `7MM  `7M'   `MF'`7MM  `7MMpMMMb.   ,pP"Ybd
+//   M  Mb  M' MM    MM    `VA ,V'    MM    MM    MM   8I   `"
+//   M  YM.P'  MM    MM      XMX      MM    MM    MM   `YMMMa.
+//   M  `YM'   MM    MM    ,V' VA.    MM    MM    MM   L.   I8
+// .JML. `'  .JMML..JMML..AM.   .MA..JMML..JMML  JMML. M9mmmP'
+// Media Queries
+@mixin break($media) {
+	@if $media == mobile {
+		@media only screen and (max-width: $tablet-min-size) { @content; }
+	}
+	@else if $media == mobile-portrait {
+		@media only screen and (max-width: $tablet-min-size) and (orientation: portrait) { @content; }
+	}
+	@else if $media == mobile-landscape {
+		@media only screen and (max-width: $tablet-min-size) and (orientation: landscape) { @content; }
+	}
+	@else if $media == mobile-tablet {
+		@media only screen and (max-width: $desktop-min-size) { @content; }
+	}
+	@else if $media == tablet {
+		@media only screen and (min-width: $tablet-min-size) and (max-width: $desktop-min-size) { @content; }
+	}
+	@else if $media == tablet-andup {
+		@media only screen and (min-width: $tablet-min-size) { @content; }
+	}
+	@else if $media == tablet-landscape {
+		@media only screen and (min-width: $desktop-min-size) and (orientation: landscape) { @content; }
+	}
+	@else if $media == tablet-desktop {
+		@media only screen and (min-width: $desktop-min-size) { @content; }
+	}
+	@else if $media == desktop {
+		@media only screen and (min-width: $desktop-min-size) { @content; }
+	}
+	@else if $media == desktop-large {
+		@media only screen and (min-width: $desktop-large-min-size) { @content; }
+	}
+}
+
+
+@mixin group() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+
+//                                                        ,,
+// `7MM"""YMM               mm                          `7MM
+//   MM    `7               MM                            MM
+//   MM   d    `7M'   `MF'mmMMmm .gP"Ya `7MMpMMMb.   ,M""bMM
+//   MMmmMM      `VA ,V'    MM  ,M'   Yb  MM    MM ,AP    MM
+//   MM   Y  ,     XMX      MM  8M""""""  MM    MM 8MI    MM
+//   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
+// .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
+
+
+
+//              ,,        ,,
+//   .g8""8q.  *MM        db                    mm
+// .dP'    `YM. MM                              MM
+// dM'      `MM MM,dMMb.`7MM  .gP"Ya   ,p6"bo mmMMmm ,pP"Ybd
+// MM        MM MM    `Mb MM ,M'   Yb 6M'  OO   MM   8I   `"
+// MM.      ,MP MM     M8 MM 8M"""""" 8M        MM   `YMMMa.
+// `Mb.    ,dP' MM.   ,M9 MM YM.    , YM.    ,  MM   L.   I8
+//   `"bmmd"'   P^YbmdP'  MM  `Mbmmd'  YMbmd'   `MbmoM9mmmP'
+//                     QO MP
+//                     `bmP
+.media-object {
+	@include group();
+}
+.media {
+
+}
+.media-description {
+
+}
+
+//            ,,                                          ,,        ,,
+//  .M"""bgd  db   mm               `7MMF'     A     `7MF'db      `7MM
+// ,MI    "Y       MM                 `MA     ,MA     ,V            MM
+// `MMb.    `7MM mmMMmm .gP"Ya         VM:   ,VVM:   ,V `7MM   ,M""bMM  .gP"Ya
+//   `YMMNq.  MM   MM  ,M'   Yb         MM.  M' MM.  M'   MM ,AP    MM ,M'   Yb
+// .     `MM  MM   MM  8M""""""         `MM A'  `MM A'    MM 8MI    MM 8M""""""
+// Mb     dM  MM   MM  YM.    ,          :MM;    :MM;     MM `Mb    MM YM.    ,
+// P"Ybmmd" .JMML. `Mbmo`Mbmmd'           VF      VF    .JMML.`Wbmd"MML.`Mbmmd'
+* {
+	box-sizing: border-box;
+}
+img {
+	padding: 0 !important; // with box-sizing: border-box images should never have padding
+}
+
+header, section, footer {
+
+}
+
+//                                                    ,,        ,,
+//   .g8""8q.                                         db      `7MM
+// .dP'    `YM.                                                 MM
+// dM'      `MM `7M'   `MF'.gP"Ya `7Mb,od8 `7Mb,od8 `7MM   ,M""bMM  .gP"Ya  ,pP"Ybd
+// MM        MM   VA   ,V ,M'   Yb  MM' "'   MM' "'   MM ,AP    MM ,M'   Yb 8I   `"
+// MM.      ,MP    VA ,V  8M""""""  MM       MM       MM 8MI    MM 8M"""""" `YMMMa.
+// `Mb.    ,dP'     VVV   YM.    ,  MM       MM       MM `Mb    MM YM.    , L.   I8
+//   `"bmmd"'        W     `Mbmmd'.JMML.   .JMML.   .JMML.`Wbmd"MML.`Mbmmd' M9mmmP'

@@ -30,7 +30,9 @@ $white: #FFFFFF;
 $shadow: hsla(0, 0, 0, 0.1);
 
 // FONT STACKS
-$marker: ''Permanent Marker', cursive';
+// $marker: 'Permanent Marker', cursive'; // not linked to
+$noto: 'Noto Sans', sans-serif;
+$muli: 'Muli', sans-serif;
 
 // BREAK POINTS
 $tablet-min-size: 768px !default;
@@ -163,6 +165,16 @@ img {
 
 html {
 	background-color: #f0f4ff;
+}
+body {
+	//font: $muli-light;
+	font-family: $muli;
+	font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+	//font: $muli-regular;
+	font-family: $noto;
+	font-weight: 700;
 }
 header, section, footer {
 	margin: 0 auto;

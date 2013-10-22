@@ -101,6 +101,17 @@ $widthRegular: 600px;
 	background-image: linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
 }
 
+.BOOM {
+background: $colorOne; /* Old browsers */
+background: -moz-linear-gradient(top, $colorOne 0%, $colorTwo 50%, $colorThree 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$colorOne), color-stop(50%,$colorTwo), color-stop(100%,$colorThree)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* IE10+ */
+background: linear-gradient(to bottom, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorOne', endColorstr='$colorThree',GradientType=0 ); /* IE6-9 */
+}
+
 
 //                                                        ,,
 // `7MM"""YMM               mm                          `7MM

@@ -712,14 +712,15 @@ header .logo {
   box-shadow: 0.1em 0.1em 0.3em 0 rgba(0, 0, 0, 0.1);
   margin: 1em 0; }
   .notecard .header {
+    margin: 0;
+    padding: 0.2em 0 0.1em 0.5em;
     background-image: -webkit-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -moz-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -o-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -ms-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
-    background-image: linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
-    margin: 0;
-    padding: 0.2em 0 0.1em 0.5em; }
+    background-image: linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white); }
   .notecard .body {
+    padding: 0 1em 1em;
     background-image: -webkit-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
     background-image: -moz-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
     background-image: -o-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);

@@ -182,11 +182,12 @@ header {
 	box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
 	margin: 1em 0;
 	.header {
-		@include notecard-header();
 		margin: 0;
 		padding: 0.2em 0 0.1em 0.5em;
+		@include notecard-header();
 	}
 	.body {
+		padding: 0 1em 1em;
 		@include notecard-body();
 	}
 }

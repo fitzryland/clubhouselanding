@@ -27,6 +27,10 @@ $lightBlue: #91beff;
 $lightRed: #e49999;
 $white: #FFFFFF;
 
+// ADDED FOR LANDING PAGE
+$midGray: #6c6c6c;
+$orange: #ffa631;
+
 $shadow: hsla(0, 0, 0, 0.1);
 
 // FONT STACKS
@@ -167,7 +171,7 @@ html {
 	background-color: #f0f4ff;
 }
 body {
-	//font: $muli-light;
+	color: $darkBlue;
 	font-family: $muli;
 	font-weight: 400;
 }
@@ -177,6 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 header, section, footer {
+	@include group();
 	margin: 0 auto;
 	width: $widthSmall;
 	@include break(tablet-andup) {
@@ -184,9 +189,54 @@ header, section, footer {
 	}
 }
 header {
-	@include group();
+	margin: 1em auto 2em;
+	@include break(tablet-andup) {
+		position: relative;
+	}
 	.logo {
 		float: left;
+	}
+}
+.logo-title, .tagline {
+	margin: 0;
+}
+.logo-title {
+	color: $orange;
+	line-height: 2em;
+	@include break(tablet-andup) {
+		display: block;
+		padding-top: 3.6em;
+	}
+	.club, .house {
+		@include break(tablet-andup) {
+			padding-left: 0.1em
+		}
+	}
+	.club {
+		font-size: 4.6em;
+		line-height: 1em;
+		@include break(tablet-andup) {
+			font-size: 4em;
+		}
+	}
+	.house {
+		font-size: 3.2em;
+		@include break(tablet-andup) {
+			font-size: 2.8em;
+		}
+	}
+}
+.tagline {
+	color: $midGray;
+	font-family: $muli;
+	font-size: 2em;
+	font-weight: 400;
+	line-height: 1.2em;
+	@include break(tablet-andup) {
+		font-size: 1.5em;
+		left: 13.7em;
+		position: absolute;
+		top: 2em;
 	}
 }
 .notecard {
@@ -194,13 +244,16 @@ header {
 	box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
 	margin: 1em 0;
 	.header {
+		@include notecard-header();
 		margin: 0;
 		padding: 0.2em 0 0.1em 0.5em;
-		@include notecard-header();
 	}
 	.body {
-		padding: 0 1em 1em;
 		@include notecard-body();
+		padding: 0 0.5em 0.5em;
+		@include break(tablet-andup) {
+			padding: 0 1em 1em;
+		}
 	}
 }
 

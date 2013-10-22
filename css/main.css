@@ -694,6 +694,7 @@ html {
   background-color: #f0f4ff; }
 
 body {
+  color: #1f2e49;
   font-family: "Muli", sans-serif;
   font-weight: 400; }
 
@@ -704,33 +705,79 @@ h1, h2, h3, h4, h5, h6 {
 header, section, footer {
   margin: 0 auto;
   width: 316px; }
+  header:after, section:after, footer:after {
+    content: "";
+    display: table;
+    clear: both; }
   @media only screen and (min-width: 768px) {
     header, section, footer {
       width: 600px; } }
 
-header:after {
-  content: "";
-  display: table;
-  clear: both; }
-header .logo {
-  float: left; }
+header {
+  margin: 1em auto 2em; }
+  @media only screen and (min-width: 768px) {
+    header {
+      position: relative; } }
+  header .logo {
+    float: left; }
+
+.logo-title, .tagline {
+  margin: 0; }
+
+.logo-title {
+  color: #ffa631;
+  line-height: 2em; }
+  @media only screen and (min-width: 768px) {
+    .logo-title {
+      display: block;
+      padding-top: 3.6em; } }
+  @media only screen and (min-width: 768px) {
+    .logo-title .club, .logo-title .house {
+      padding-left: 0.1em; } }
+  .logo-title .club {
+    font-size: 4.6em;
+    line-height: 1em; }
+    @media only screen and (min-width: 768px) {
+      .logo-title .club {
+        font-size: 4em; } }
+  .logo-title .house {
+    font-size: 3.2em; }
+    @media only screen and (min-width: 768px) {
+      .logo-title .house {
+        font-size: 2.8em; } }
+
+.tagline {
+  color: #6c6c6c;
+  font-family: "Muli", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.2em; }
+  @media only screen and (min-width: 768px) {
+    .tagline {
+      font-size: 1.5em;
+      left: 13.7em;
+      position: absolute;
+      top: 2em; } }
 
 .notecard {
   -webkit-box-shadow: 0.1em 0.1em 0.3em 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0.1em 0.1em 0.3em 0 rgba(0, 0, 0, 0.1);
   margin: 1em 0; }
   .notecard .header {
-    margin: 0;
-    padding: 0.2em 0 0.1em 0.5em;
     background-image: -webkit-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -moz-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -o-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -ms-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
-    background-image: linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white); }
+    background-image: linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
+    margin: 0;
+    padding: 0.2em 0 0.1em 0.5em; }
   .notecard .body {
-    padding: 0 1em 1em;
     background-image: -webkit-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
     background-image: -moz-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
     background-image: -o-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
     background-image: -ms-repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
-    background-image: repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em); }
+    background-image: repeating-linear-gradient(top, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em);
+    padding: 0 0.5em 0.5em; }
+    @media only screen and (min-width: 768px) {
+      .notecard .body {
+        padding: 0 1em 1em; } }

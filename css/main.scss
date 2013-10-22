@@ -191,6 +191,7 @@ header, section, footer {
 header {
 	margin: 1em auto 2em;
 	@include break(tablet-andup) {
+		margin: 2em auto 1.5em;
 		position: relative;
 	}
 	.logo {

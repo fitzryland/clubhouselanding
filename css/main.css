@@ -720,5 +720,4 @@ header .logo {
     margin: 0;
     padding: 0.2em 0 0.1em 0.5em; }
   .notecard .body {
-    background-image: repeating-linear-gradient(0deg, white 0em, white 1.9em, #91beff 1.9em, #91beff 2em);
-    background-position: top; }
+    background-image: repeating-linear-gradient(180deg, white 0em, white 1.3em, #91beff 1.3em, #91beff 1.4em); }

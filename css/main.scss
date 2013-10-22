@@ -93,23 +93,25 @@ $widthRegular: 600px;
 }
 
 // APPEARENCE
-@mixin notecard-header($linecolor: $lightRed) {
-	background-image: -webkit-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
-	background-image: -moz-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
-	background-image: -o-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
-	background-image: -ms-linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
-	background-image: linear-gradient(0deg, $linecolor, $linecolor 0.1em, #FFFFFF 0.1em, #FFFFFF);
+@mixin notecard-header($lineColor: $lightRed, $lineWidth: 0.1em) {
+	$prefixs: -webkit- -moz- -o- -ms- '';
+	@each $prefix in $prefixs {
+		background-image: #{$prefix}linear-gradient(
+			bottom,
+			$lineColor, $lineColor $lineWidth,
+			#FFFFFF $lineWidth, #FFFFFF
+		);
+	}
 }
-
-.BOOM {
-background: $colorOne; /* Old browsers */
-background: -moz-linear-gradient(top, $colorOne 0%, $colorTwo 50%, $colorThree 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$colorOne), color-stop(50%,$colorTwo), color-stop(100%,$colorThree)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* IE10+ */
-background: linear-gradient(to bottom, $colorOne 0%,$colorTwo 50%,$colorThree 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorOne', endColorstr='$colorThree',GradientType=0 ); /* IE6-9 */
+@mixin notecard-body($lineColor: $lightBlue, $lineWidth: 0.1em, $lineHeight: 1.4em) {
+	$prefixs: -webkit- -moz- -o- -ms- '';
+	@each $prefix in $prefixs {
+		background-image: #{$prefix}repeating-linear-gradient(
+			top,
+			#FFFFFF 0em, #FFFFFF $lineHeight - $lineWidth,
+			$lineColor $lineHeight - $lineWidth, $lineColor $lineHeight
+		);
+	}
 }
 
 
@@ -185,7 +187,7 @@ header {
 		padding: 0.2em 0 0.1em 0.5em;
 	}
 	.body {
-	background-image: repeating-linear-gradient( 180deg, #FFFFFF 0em, #FFFFFF 1.3em, $lightBlue 1.3em, $lightBlue 1.4em);
+		@include notecard-body();
 	}
 }
 

@@ -702,6 +702,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Noto Sans", sans-serif;
   font-weight: 700; }
 
+a:link, a:visited {
+  text-decoration: none; }
+
 header, section, footer {
   margin: 0 auto;
   width: 316px; }
@@ -782,3 +785,12 @@ header {
     @media only screen and (min-width: 768px) {
       .notecard .body {
         padding: 0 1em 1em; } }
+
+.email-submit {
+  text-align: center; }
+
+footer {
+  text-align: center;
+  margin-bottom: 2em; }
+  footer a:first-child {
+    margin-right: 2em; }

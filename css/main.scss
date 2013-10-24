@@ -180,6 +180,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $noto;
 	font-weight: 700;
 }
+a:link, a:visited {
+	text-decoration: none;
+}
+a:hover, a:active {
+
+}
+
 header, section, footer {
 	@include group();
 	margin: 0 auto;
@@ -257,8 +264,16 @@ header {
 		}
 	}
 }
-
-
+.email-submit {
+	text-align: center;
+}
+footer {
+	text-align: center;
+	margin-bottom: 2em;
+	a:first-child {
+		margin-right: 2em;
+	}
+}
 
 
 

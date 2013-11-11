@@ -679,6 +679,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@media only screen and (max-width: 768px) {
+  header .logo-text, header .logo, .notecard {
+    width: 100%; } }
+
+@media only screen and (min-width: 768px) {
+  header .logo-text, header .logo, .notecard {
+    float: left;
+    width: 50%; }
+    header .logo-text:nth-child(odd), header .logo:nth-child(odd), .notecard:nth-child(odd) {
+      padding-right: 1%; }
+    header .logo-text:nth-child(even), header .logo:nth-child(even), .notecard:nth-child(even) {
+      padding-left: 1%; } }
+
+@media only screen and (min-width: 979px) {
+  header .logo-text, header .logo {
+    float: left;
+    margin-right: 1%;
+    width: 24.25%; }
+    header .logo-text:nth-child(4n), header .logo:nth-child(4n) {
+      margin-right: 0; } }
+
 .media-object:after {
   content: "";
   display: table;
@@ -705,16 +726,26 @@ h1, h2, h3, h4, h5, h6 {
 a:link, a:visited {
   text-decoration: none; }
 
-header, section, footer {
+.wrap {
   margin: 0 auto;
   width: 316px; }
-  header:after, section:after, footer:after {
+  .wrap:after {
     content: "";
     display: table;
     clear: both; }
   @media only screen and (min-width: 768px) {
-    header, section, footer {
+    .wrap {
       width: 600px; } }
+  @media only screen and (min-width: 979px) {
+    .wrap {
+      width: 1200px; } }
+
+header, section, footer {
+  width: 100%; }
+  header:after, section:after, footer:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 header {
   margin: 1em auto 2em; }

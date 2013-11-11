@@ -46,6 +46,7 @@ $desktop-large-min-size: 1200px !default;
 // SIZES
 $widthSmall: 316px;
 $widthRegular: 600px;
+$widthFull: 1200px;
 
 //                   ,,               ,,             gp
 // `7MMM.     ,MMF'  db               db             \/
@@ -129,8 +130,38 @@ $widthRegular: 600px;
 //   MM   Y  ,     XMX      MM  8M""""""  MM    MM 8MI    MM
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
-
-
+%mobile-1-col {
+	@include break(mobile) {
+		width: 100%;
+	}
+}
+%tablet-andup-1-col {
+	@include break(tablet-andup) {
+		width: 100%;
+	}
+}
+%tablet-andup-1-2-col {
+	@include break(tablet-andup) {
+		float: left;
+		width: 50%;
+		&:nth-child(odd) {
+			padding-right: 1%;
+		}
+		&:nth-child(even) {
+			padding-left: 1%;
+		}
+	}
+}
+%desktop-1-4-col {
+	@include break(desktop) {
+		float: left;
+		margin-right: 1%;
+		width: 24.25%;
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+}
 
 //              ,,        ,,
 //   .g8""8q.  *MM        db                    mm
@@ -186,14 +217,20 @@ a:link, a:visited {
 a:hover, a:active {
 
 }
-
-header, section, footer {
+.wrap {
 	@include group();
 	margin: 0 auto;
 	width: $widthSmall;
 	@include break(tablet-andup) {
 		width: $widthRegular;
 	}
+	@include break(desktop) {
+		width: $widthFull;
+	}
+}
+header, section, footer {
+	width: 100%;
+	@include group();
 }
 header {
 	margin: 1em auto 2em;
@@ -203,6 +240,11 @@ header {
 	}
 	.logo {
 		float: left;
+	}
+	.logo-text, .logo {
+		@extend %mobile-1-col;
+		@extend %tablet-andup-1-2-col;
+		@extend %desktop-1-4-col;
 	}
 }
 .logo-title, .tagline {
@@ -248,6 +290,8 @@ header {
 	}
 }
 .notecard {
+	@extend %mobile-1-col;
+	@extend %tablet-andup-1-2-col;
 	-webkit-box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
 	box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
 	margin: 1em 0;

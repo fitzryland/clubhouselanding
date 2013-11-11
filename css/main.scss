@@ -46,7 +46,7 @@ $desktop-large-min-size: 1200px !default;
 // SIZES
 $widthSmall: 316px;
 $widthRegular: 600px;
-$widthFull: 1200px;
+$widthFull: 979px;
 
 //                   ,,               ,,             gp
 // `7MMM.     ,MMF'  db               db             \/
@@ -135,6 +135,11 @@ $widthFull: 1200px;
 		width: 100%;
 	}
 }
+%tablet-1-col {
+	@include break(tablet) {
+		width: 100%;
+	}
+}
 %tablet-andup-1-col {
 	@include break(tablet-andup) {
 		width: 100%;
@@ -143,12 +148,12 @@ $widthFull: 1200px;
 %tablet-andup-1-2-col {
 	@include break(tablet-andup) {
 		float: left;
-		width: 50%;
+		width: 48%;
 		&:nth-child(odd) {
-			padding-right: 1%;
+			margin-right: 1%;
 		}
 		&:nth-child(even) {
-			padding-left: 1%;
+			margin-left: 1%;
 		}
 	}
 }
@@ -162,25 +167,18 @@ $widthFull: 1200px;
 		}
 	}
 }
-
-//              ,,        ,,
-//   .g8""8q.  *MM        db                    mm
-// .dP'    `YM. MM                              MM
-// dM'      `MM MM,dMMb.`7MM  .gP"Ya   ,p6"bo mmMMmm ,pP"Ybd
-// MM        MM MM    `Mb MM ,M'   Yb 6M'  OO   MM   8I   `"
-// MM.      ,MP MM     M8 MM 8M"""""" 8M        MM   `YMMMa.
-// `Mb.    ,dP' MM.   ,M9 MM YM.    , YM.    ,  MM   L.   I8
-//   `"bmmd"'   P^YbmdP'  MM  `Mbmmd'  YMbmd'   `MbmoM9mmmP'
-//                     QO MP
-//                     `bmP
-.media-object {
-	@include group();
+%desktop-1-2-col {
+	@include break(desktop) {
+		float: left;
+		margin-left: 1.5%;
+		width: 47%;
+	}
 }
-.media {
-
-}
-.media-description {
-
+%desktop-1-col {
+	@include break(desktop) {
+		margin: 0;
+		width: 100%;
+	}
 }
 
 //            ,,                                          ,,        ,,
@@ -228,20 +226,29 @@ a:hover, a:active {
 		width: $widthFull;
 	}
 }
-header, section, footer {
+section, footer {
 	width: 100%;
 	@include group();
 }
 header {
-	margin: 1em auto 2em;
-	@include break(tablet-andup) {
-		margin: 2em auto 1.5em;
+	@include break(tablet) {
 		position: relative;
+		@include group();
+	}
+	@include break(desktop) {
+		display: inline;
 	}
 	.logo {
 		float: left;
+		margin-top: 2em;
+		@include break(desktop) {
+			margin-top: 4em;
+		}
 	}
-	.logo-text, .logo {
+	.logoText {
+		position: relative;
+	}
+	.logoText, .logo {
 		@extend %mobile-1-col;
 		@extend %tablet-andup-1-2-col;
 		@extend %desktop-1-4-col;
@@ -253,26 +260,31 @@ header {
 .logo-title {
 	color: $orange;
 	line-height: 2em;
-	@include break(tablet-andup) {
+	position: relative;
+	@include break(tablet) {
 		display: block;
-		padding-top: 3.6em;
+		padding-top: 3.3em;
 	}
-	.club, .house {
-		@include break(tablet-andup) {
-			padding-left: 0.1em
-		}
+	@include break(desktop) {
+		padding-top: 3.7em;
 	}
 	.club {
 		font-size: 4.6em;
 		line-height: 1em;
-		@include break(tablet-andup) {
-			font-size: 4em;
+		@include break(tablet) {
+			font-size: 4.3em;
+		}
+		@include break(desktop) {
+			font-size: 3.5em;
 		}
 	}
 	.house {
 		font-size: 3.2em;
-		@include break(tablet-andup) {
-			font-size: 2.8em;
+		@include break(tablet) {
+			font-size: 3em;
+		}
+		@include break(desktop) {
+			font-size: 2.5em;
 		}
 	}
 }
@@ -284,17 +296,26 @@ header {
 	line-height: 1.2em;
 	@include break(tablet-andup) {
 		font-size: 1.5em;
-		left: 13.7em;
+		left: 0;
 		position: absolute;
 		top: 2em;
+	}
+	@include break(desktop) {
+		top: 2.6em;
 	}
 }
 .notecard {
 	@extend %mobile-1-col;
-	@extend %tablet-andup-1-2-col;
+	@extend %tablet-1-col;
+	@extend %desktop-1-2-col;
 	-webkit-box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
 	box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
-	margin: 1em 0;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	&:last-child {
+		@extend %desktop-1-col;
+		margin: 1em 0 2em;
+	}
 	.header {
 		@include notecard-header();
 		margin: 0;

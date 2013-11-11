@@ -680,30 +680,40 @@ table {
   border-spacing: 0; }
 
 @media only screen and (max-width: 768px) {
-  header .logo-text, header .logo, .notecard {
+  header .logoText, header .logo, .notecard {
+    width: 100%; } }
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .notecard {
     width: 100%; } }
 
 @media only screen and (min-width: 768px) {
-  header .logo-text, header .logo, .notecard {
+  header .logoText, header .logo {
     float: left;
-    width: 50%; }
-    header .logo-text:nth-child(odd), header .logo:nth-child(odd), .notecard:nth-child(odd) {
-      padding-right: 1%; }
-    header .logo-text:nth-child(even), header .logo:nth-child(even), .notecard:nth-child(even) {
-      padding-left: 1%; } }
+    width: 48%; }
+    header .logoText:nth-child(odd), header .logo:nth-child(odd) {
+      margin-right: 1%; }
+    header .logoText:nth-child(even), header .logo:nth-child(even) {
+      margin-left: 1%; } }
 
 @media only screen and (min-width: 979px) {
-  header .logo-text, header .logo {
+  header .logoText, header .logo {
     float: left;
     margin-right: 1%;
     width: 24.25%; }
-    header .logo-text:nth-child(4n), header .logo:nth-child(4n) {
+    header .logoText:nth-child(4n), header .logo:nth-child(4n) {
       margin-right: 0; } }
 
-.media-object:after {
-  content: "";
-  display: table;
-  clear: both; }
+@media only screen and (min-width: 979px) {
+  .notecard {
+    float: left;
+    margin-left: 1.5%;
+    width: 47%; } }
+
+@media only screen and (min-width: 979px) {
+  .notecard:last-child {
+    margin: 0;
+    width: 100%; } }
 
 * {
   box-sizing: border-box; }
@@ -738,48 +748,65 @@ a:link, a:visited {
       width: 600px; } }
   @media only screen and (min-width: 979px) {
     .wrap {
-      width: 1200px; } }
+      width: 979px; } }
 
-header, section, footer {
+section, footer {
   width: 100%; }
-  header:after, section:after, footer:after {
+  section:after, footer:after {
     content: "";
     display: table;
     clear: both; }
 
-header {
-  margin: 1em auto 2em; }
-  @media only screen and (min-width: 768px) {
-    header {
-      margin: 2em auto 1.5em;
-      position: relative; } }
-  header .logo {
-    float: left; }
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  header {
+    position: relative; }
+    header:after {
+      content: "";
+      display: table;
+      clear: both; } }
+@media only screen and (min-width: 979px) {
+  header {
+    display: inline; } }
+header .logo {
+  float: left;
+  margin-top: 2em; }
+  @media only screen and (min-width: 979px) {
+    header .logo {
+      margin-top: 4em; } }
+header .logoText {
+  position: relative; }
 
 .logo-title, .tagline {
   margin: 0; }
 
 .logo-title {
   color: #ffa631;
-  line-height: 2em; }
-  @media only screen and (min-width: 768px) {
+  line-height: 2em;
+  position: relative; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
     .logo-title {
       display: block;
-      padding-top: 3.6em; } }
-  @media only screen and (min-width: 768px) {
-    .logo-title .club, .logo-title .house {
-      padding-left: 0.1em; } }
+      padding-top: 3.3em; } }
+  @media only screen and (min-width: 979px) {
+    .logo-title {
+      padding-top: 3.7em; } }
   .logo-title .club {
     font-size: 4.6em;
     line-height: 1em; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
       .logo-title .club {
-        font-size: 4em; } }
+        font-size: 4.3em; } }
+    @media only screen and (min-width: 979px) {
+      .logo-title .club {
+        font-size: 3.5em; } }
   .logo-title .house {
     font-size: 3.2em; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
       .logo-title .house {
-        font-size: 2.8em; } }
+        font-size: 3em; } }
+    @media only screen and (min-width: 979px) {
+      .logo-title .house {
+        font-size: 2.5em; } }
 
 .tagline {
   color: #6c6c6c;
@@ -790,14 +817,20 @@ header {
   @media only screen and (min-width: 768px) {
     .tagline {
       font-size: 1.5em;
-      left: 13.7em;
+      left: 0;
       position: absolute;
       top: 2em; } }
+  @media only screen and (min-width: 979px) {
+    .tagline {
+      top: 2.6em; } }
 
 .notecard {
   -webkit-box-shadow: 0.1em 0.1em 0.3em 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0.1em 0.1em 0.3em 0 rgba(0, 0, 0, 0.1);
-  margin: 1em 0; }
+  margin-top: 1em;
+  margin-bottom: 1em; }
+  .notecard:last-child {
+    margin: 1em 0 2em; }
   .notecard .header {
     background-image: -webkit-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);
     background-image: -moz-linear-gradient(bottom, #e49999, #e49999 0.1em, white 0.1em, white);

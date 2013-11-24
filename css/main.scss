@@ -23,6 +23,7 @@
 $burntOrange: #f1a85b;
 $lightBurntOrange: #ffd4a1;
 $darkBlue: #1f2e49;
+$lightestBlue: #f0f4ff;
 $lightBlue: #91beff;
 $lightRed: #e49999;
 $white: #FFFFFF;
@@ -120,7 +121,16 @@ $widthFull: 979px;
 		);
 	}
 }
-
+@mixin gradient() {
+	$prefixs: -webkit- -moz- -o- -ms- '';
+	@each $prefix in $prefixs {
+		background-image: #{$prefix}linear-gradient(
+			to right bottom,
+			#cfcece,
+			$midGray
+		);
+	}
+}
 
 //                                                        ,,
 // `7MM"""YMM               mm                          `7MM
@@ -197,15 +207,19 @@ img {
 }
 
 html {
-	background-color: #f0f4ff;
+	height: 100%;
 }
 body {
+	@include gradient();
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: $darkBlue;
 	font-family: $muli;
 	font-weight: 400;
+	height: 100%;
+	margin: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-	//font: $muli-regular;
 	font-family: $noto;
 	font-weight: 700;
 }
@@ -225,10 +239,6 @@ a:hover, a:active {
 	@include break(desktop) {
 		width: $widthFull;
 	}
-}
-section, footer {
-	width: 100%;
-	@include group();
 }
 header {
 	@include break(tablet) {
@@ -289,7 +299,7 @@ header {
 	}
 }
 .tagline {
-	color: $midGray;
+	color: white;
 	font-family: $muli;
 	font-size: 2em;
 	font-weight: 400;
@@ -308,21 +318,17 @@ header {
 	@extend %mobile-1-col;
 	@extend %tablet-1-col;
 	@extend %desktop-1-2-col;
-	-webkit-box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
-	box-shadow: 0.1em 0.1em 0.3em 0 $shadow;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	&:last-child {
-		@extend %desktop-1-col;
-		margin: 1em 0 2em;
+		margin-top: 1em;
+		margin-bottom: 2em;
 	}
 	.header {
-		@include notecard-header();
 		margin: 0;
 		padding: 0.2em 0 0.1em 0.5em;
 	}
 	.body {
-		@include notecard-body();
 		padding: 0 0.5em 0.5em;
 		@include break(tablet-andup) {
 			padding: 0 1em 1em;
@@ -333,8 +339,11 @@ header {
 	text-align: center;
 }
 footer {
+	@extend %mobile-1-col;
+	@extend %tablet-1-col;
+	@extend %desktop-1-2-col;
 	text-align: center;
-	margin-bottom: 2em;
+	margin: 2em 0 4em;
 	a:first-child {
 		margin-right: 2em;
 	}

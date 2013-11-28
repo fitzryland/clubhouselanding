@@ -121,13 +121,14 @@ $widthFull: 979px;
 		);
 	}
 }
-@mixin gradient() {
+@mixin gradient($baseColor) {
 	$prefixs: -webkit- -moz- -o- -ms- '';
 	@each $prefix in $prefixs {
 		background-image: #{$prefix}linear-gradient(
 			to right bottom,
-			#cfcece,
-			$midGray
+			white
+			// lighten($baseColor, 40%),
+			$baseColor
 		);
 	}
 }
@@ -210,7 +211,7 @@ html {
 	height: 100%;
 }
 body {
-	@include gradient();
+	@include gradient(lighten($midGray, 30%));
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: $darkBlue;

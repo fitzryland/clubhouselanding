@@ -720,11 +720,11 @@ html {
   height: 100%; }
 
 body {
-  background-image: -webkit-linear-gradient(to right bottom, #cfcece, #6c6c6c);
-  background-image: -moz-linear-gradient(to right bottom, #cfcece, #6c6c6c);
-  background-image: -o-linear-gradient(to right bottom, #cfcece, #6c6c6c);
-  background-image: -ms-linear-gradient(to right bottom, #cfcece, #6c6c6c);
-  background-image: linear-gradient(to right bottom, #cfcece, #6c6c6c);
+  background-image: -webkit-linear-gradient(to right bottom, white #b8b8b8);
+  background-image: -moz-linear-gradient(to right bottom, white #b8b8b8);
+  background-image: -o-linear-gradient(to right bottom, white #b8b8b8);
+  background-image: -ms-linear-gradient(to right bottom, white #b8b8b8);
+  background-image: linear-gradient(to right bottom, white #b8b8b8);
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #1f2e49;

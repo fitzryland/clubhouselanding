@@ -16,8 +16,8 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <div class="wrap">
-            <header>
+        <header>
+            <div class="header-content">
                 <img src="img/logo-icon-big.gif" alt="Clubhouse Logo" class="logo">
                 <div class="logoText">
                     <h1 class="logo-title">
@@ -26,35 +26,48 @@
                     </h1>
                     <h2 class="tagline">live better</br>live together</h2>
                 </div>
-            </header>
-            <section>
-                <article class="notecard">
-                    <h3 class="header">What is Clubhouse?</h3>
-                    <div class="body">Clubhouse is an online web application for managing shared housing. We help social people live together with ease and style. Manage bills, track chores, share messages, and find new housemates. We help people live better, by living together.</div>
-                </article>
-                <article class="notecard">
-                    <h3 class="header">Why Clubhouse?</h3>
-                    <div class="body">Like so many people, we choose to live in shared spaces. We like community, we like frugality, we like effective processes. Clubhouse is a tool for increasing the quality of life for us and people like us.</div>
-                </article>
-                <article class="notecard">
-                    <h3 class="header">How can I join or try?</h3>
-                    <div class="body">Clubhouse is in the process of being built. If you want to be an early beta tester, give us your name and email below and we will include you in the earliest versions.
-                    <form class="email-submit">
-                        <input type="text">
-                        <button type="submit">submit</button>
-                    </form>
-                    </div>
-                </article>
-            </section>
-            <footer>
+            </div>
+            <nav>
+                <div class="nav-content">
+                    <a href="#what">What?</a>
+                    <a href="#why">Why?</a>
+                    <a href="#join">Join.</a>
+                </div>
+            </nav>
+        </header>
+        <section class="row-wrap what-wrap" id="what">
+            <article class="row-content">
+                <h3 class="row-header">What is Clubhouse?</h3>
+                <div class="row-body">Clubhouse is an online web application for managing shared housing. We help social people live together with ease and style. Manage bills, track chores, share messages, and find new housemates. We help people live better, by living together.</div>
+            </article>
+        </section>
+        <section class="row-wrap why-wrap" id="why">
+            <article class="row-content">
+                <h3 class="row-header">Why Clubhouse?</h3>
+                <div class="row-body">Like so many people, we choose to live in shared spaces. We like community, we like frugality, we like effective processes. Clubhouse is a tool for increasing the quality of life for us and people like us.</div>
+            </article>
+        </section>
+        <section class="row-wrap join-wrap" id="join">
+            <article class="row-content">
+                <h3 class="row-header">How can I join or try?</h3>
+                <div class="row-body">Clubhouse is in the process of being built. If you want to be an early beta tester, give us your name and email below and we will include you in the earliest versions.
+                <form class="email-submit">
+                    <input type="text">
+                    <button type="submit">submit</button>
+                </form>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <div class="footer-content">
                 <a href="https://www.facebook.com/Clubhousemgmt" target="_blank" class="socialIcon">
                     <img src="img/Clubhouse-icon-facebook.gif" alt="">
                 </a>
                 <a href="#" target="_blank" class="socialIcon">
                     <img src="img/Clubhouse-icon-twitter.gif" alt="">
                 </a>
-            </footer>
-        </div>
+            </div>
+        </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>

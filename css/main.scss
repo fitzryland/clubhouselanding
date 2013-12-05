@@ -34,6 +34,11 @@ $orange: #ffa631;
 
 $shadow: hsla(0, 0, 0, 0.1);
 
+$bgColor: hsl(0, 0, 98);
+$primaryAccentColor: $orange;
+$secondarAccentColor: $darkBlue;
+$text-color: $darkBlue;
+
 // FONT STACKS
 // $marker: 'Permanent Marker', cursive'; // not linked to
 $noto: 'Noto Sans', sans-serif;
@@ -48,6 +53,8 @@ $desktop-large-min-size: 1200px !default;
 $widthSmall: 316px;
 $widthRegular: 600px;
 $widthFull: 979px;
+
+$border-width: 0.3rem;
 
 //                   ,,               ,,             gp
 // `7MMM.     ,MMF'  db               db             \/
@@ -141,55 +148,25 @@ $widthFull: 979px;
 //   MM   Y  ,     XMX      MM  8M""""""  MM    MM 8MI    MM
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
-%mobile-1-col {
-	@include break(mobile) {
-		width: 100%;
-	}
+%wrap {
+	@include group();
+	width: 100%;
 }
-%tablet-1-col {
+%wrap-content {
+	@include group();
+	margin: 0 auto;
+	width: $widthSmall;
 	@include break(tablet) {
-		width: 100%;
+		width: $widthRegular;
 	}
-}
-%tablet-andup-1-col {
-	@include break(tablet-andup) {
-		width: 100%;
-	}
-}
-%tablet-andup-1-2-col {
-	@include break(tablet-andup) {
-		float: left;
-		width: 48%;
-		&:nth-child(odd) {
-			margin-right: 1%;
-		}
-		&:nth-child(even) {
-			margin-left: 1%;
-		}
-	}
-}
-%desktop-1-4-col {
 	@include break(desktop) {
-		float: left;
-		margin-right: 1%;
-		width: 24.25%;
-		&:nth-child(4n) {
-			margin-right: 0;
-		}
+		width: $widthFull;
 	}
 }
-%desktop-1-2-col {
-	@include break(desktop) {
-		float: left;
-		margin-left: 1.5%;
-		width: 47%;
-	}
-}
-%desktop-1-col {
-	@include break(desktop) {
-		margin: 0;
-		width: 100%;
-	}
+%text-box {
+	background-color: $bgColor;
+	border-bottom: $border-width solid $primaryAccentColor;
+	padding: 1em;
 }
 
 //            ,,                                          ,,        ,,
@@ -211,10 +188,10 @@ html {
 	height: 100%;
 }
 body {
-	@include gradient(lighten($midGray, 30%));
+	background-color: $bgColor;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	color: $darkBlue;
+	color: $text-color;
 	font-family: $muli;
 	font-weight: 400;
 	height: 100%;
@@ -230,39 +207,38 @@ a:link, a:visited {
 a:hover, a:active {
 
 }
-.wrap {
+// 88  88 888888    db    8888b.  888888 88""Yb
+// 88  88 88__     dPYb    8I  Yb 88__   88__dP
+// 888888 88""    dP__Yb   8I  dY 88""   88"Yb
+// 88  88 888888 dP""""Yb 8888Y"  888888 88  Yb
+header {
+	@extend %wrap;
+	border-bottom: $border-width solid $secondarAccentColor;
+}
+.header-content {
 	@include group();
 	margin: 0 auto;
 	width: $widthSmall;
 	@include break(tablet-andup) {
 		width: $widthRegular;
 	}
-	@include break(desktop) {
-		width: $widthFull;
-	}
-}
-header {
 	@include break(tablet) {
 		position: relative;
 		@include group();
 	}
 	@include break(desktop) {
-		display: inline;
 	}
 	.logo {
 		float: left;
 		margin-top: 2em;
-		@include break(desktop) {
-			margin-top: 4em;
-		}
 	}
 	.logoText {
 		position: relative;
 	}
 	.logoText, .logo {
-		@extend %mobile-1-col;
-		@extend %tablet-andup-1-2-col;
-		@extend %desktop-1-4-col;
+		// @extend %mobile-1-col;
+		// @extend %tablet-andup-1-2-col;
+		// @extend %desktop-1-4-col;
 	}
 }
 .logo-title, .tagline {
@@ -272,42 +248,33 @@ header {
 	color: $orange;
 	line-height: 2em;
 	position: relative;
-	@include break(tablet) {
+	@include break(tablet-andup) {
 		display: block;
-		padding-top: 3.3em;
-	}
-	@include break(desktop) {
-		padding-top: 3.7em;
+		padding-top: 4.4em;
 	}
 	.club {
 		font-size: 4.6em;
 		line-height: 1em;
-		@include break(tablet) {
-			font-size: 4.3em;
-		}
-		@include break(desktop) {
-			font-size: 3.5em;
+		@include break(tablet-andup) {
+			font-size: 4.2em;
 		}
 	}
 	.house {
 		font-size: 3.2em;
-		@include break(tablet) {
-			font-size: 3em;
-		}
-		@include break(desktop) {
-			font-size: 2.5em;
+		@include break(tablet-andup) {
+			font-size: 2.9em;
 		}
 	}
 }
 .tagline {
-	color: white;
 	font-family: $muli;
 	font-size: 2em;
 	font-weight: 400;
+	margin: 0.5em 0 1em;
 	line-height: 1.2em;
 	@include break(tablet-andup) {
 		font-size: 1.5em;
-		left: 0;
+		left: 330px;
 		position: absolute;
 		top: 2em;
 	}
@@ -315,36 +282,77 @@ header {
 		top: 2.6em;
 	}
 }
-.notecard {
-	@extend %mobile-1-col;
-	@extend %tablet-1-col;
-	@extend %desktop-1-2-col;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	&:last-child {
-		margin-top: 1em;
-		margin-bottom: 2em;
+nav {
+	@extend %wrap;
+}
+.nav-content {
+	@extend %wrap-content;
+	font-size: 1.2em;
+	margin: 1em auto;
+	text-align: center;
+	a:link, a:visited {
+		color: $text-color;
+		padding: 0.5em;
 	}
-	.header {
-		margin: 0;
-		padding: 0.2em 0 0.1em 0.5em;
+}
+// 88""Yb  dP"Yb  Yb        dP .dP"Y8
+// 88__dP dP   Yb  Yb  db  dP  `Ybo."
+// 88"Yb  Yb   dP   YbdPYbdP   o.`Y8b
+// 88  Yb  YbodP     YP  YP    8bodP'
+.row-wrap {
+	@extend %wrap;
+	background-repeat: none;
+	background-size: cover;
+	border-bottom: $border-width solid $secondarAccentColor;
+}
+.row-content {
+	@extend %wrap-content;
+	min-height: 500px;
+	padding: 1em 0;
+	position: relative;
+}
+.row-header, .row-body {
+	@extend %text-box;
+	@include break(tablet-andup) {
+		position: absolute;
 	}
-	.body {
-		padding: 0 0.5em 0.5em;
-		@include break(tablet-andup) {
-			padding: 0 1em 1em;
-		}
+}
+.row-header {
+	@include break(tablet-andup) {
+		top: 1em;
+		left: 0;
 	}
+}
+.row-body {
+	@include break(tablet-andup) {
+		bottom: 1em;
+		right: 0;
+		width: 50%;
+	}
+}
+.what-wrap {
+	background-image: url(../img/grayscale1.jpg);
+}
+.why-wrap {
+	background-image: url(../img/grayscale3.jpg);
+}
+.join-wrap {
+	background-image: url(../img/grayscale2.jpg);
 }
 .email-submit {
 	text-align: center;
 }
+// 888888  dP"Yb   dP"Yb  888888 888888 88""Yb
+// 88__   dP   Yb dP   Yb   88   88__   88__dP
+// 88""   Yb   dP Yb   dP   88   88""   88"Yb
+// 88      YbodP   YbodP    88   888888 88  Yb
 footer {
-	@extend %mobile-1-col;
-	@extend %tablet-1-col;
-	@extend %desktop-1-2-col;
+	@extend %wrap;
+}
+.footer-content {
+	@extend %wrap-content;
+	margin: 2em auto 3em;
 	text-align: center;
-	margin: 2em 0 4em;
 	a:first-child {
 		margin-right: 2em;
 	}

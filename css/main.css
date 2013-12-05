@@ -679,36 +679,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@media only screen and (max-width: 768px) {
-  header .logoText, header .logo, .notecard, footer {
-    width: 100%; } }
+header, nav, .row-wrap, footer {
+  width: 100%; }
+  header:after, nav:after, .row-wrap:after, footer:after {
+    content: "";
+    display: table;
+    clear: both; }
 
-@media only screen and (min-width: 768px) and (max-width: 979px) {
-  .notecard, footer {
-    width: 100%; } }
+.nav-content, .row-content, .footer-content {
+  margin: 0 auto;
+  width: 316px; }
+  .nav-content:after, .row-content:after, .footer-content:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .nav-content, .row-content, .footer-content {
+      width: 600px; } }
+  @media only screen and (min-width: 979px) {
+    .nav-content, .row-content, .footer-content {
+      width: 979px; } }
 
-@media only screen and (min-width: 768px) {
-  header .logoText, header .logo {
-    float: left;
-    width: 48%; }
-    header .logoText:nth-child(odd), header .logo:nth-child(odd) {
-      margin-right: 1%; }
-    header .logoText:nth-child(even), header .logo:nth-child(even) {
-      margin-left: 1%; } }
-
-@media only screen and (min-width: 979px) {
-  header .logoText, header .logo {
-    float: left;
-    margin-right: 1%;
-    width: 24.25%; }
-    header .logoText:nth-child(4n), header .logo:nth-child(4n) {
-      margin-right: 0; } }
-
-@media only screen and (min-width: 979px) {
-  .notecard, footer {
-    float: left;
-    margin-left: 1.5%;
-    width: 47%; } }
+.row-header, .row-body {
+  background-color: #fafafa;
+  border-bottom: 0.3rem solid #ffa631;
+  padding: 1em; }
 
 * {
   box-sizing: border-box; }
@@ -720,11 +715,7 @@ html {
   height: 100%; }
 
 body {
-  background-image: -webkit-linear-gradient(to right bottom, white #b8b8b8);
-  background-image: -moz-linear-gradient(to right bottom, white #b8b8b8);
-  background-image: -o-linear-gradient(to right bottom, white #b8b8b8);
-  background-image: -ms-linear-gradient(to right bottom, white #b8b8b8);
-  background-image: linear-gradient(to right bottom, white #b8b8b8);
+  background-color: #fafafa;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #1f2e49;
@@ -740,38 +731,31 @@ h1, h2, h3, h4, h5, h6 {
 a:link, a:visited {
   text-decoration: none; }
 
-.wrap {
+header {
+  border-bottom: 0.3rem solid #1f2e49; }
+
+.header-content {
   margin: 0 auto;
   width: 316px; }
-  .wrap:after {
+  .header-content:after {
     content: "";
     display: table;
     clear: both; }
   @media only screen and (min-width: 768px) {
-    .wrap {
+    .header-content {
       width: 600px; } }
-  @media only screen and (min-width: 979px) {
-    .wrap {
-      width: 979px; } }
-
-@media only screen and (min-width: 768px) and (max-width: 979px) {
-  header {
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .header-content {
+      position: relative; }
+      .header-content:after {
+        content: "";
+        display: table;
+        clear: both; } }
+  .header-content .logo {
+    float: left;
+    margin-top: 2em; }
+  .header-content .logoText {
     position: relative; }
-    header:after {
-      content: "";
-      display: table;
-      clear: both; } }
-@media only screen and (min-width: 979px) {
-  header {
-    display: inline; } }
-header .logo {
-  float: left;
-  margin-top: 2em; }
-  @media only screen and (min-width: 979px) {
-    header .logo {
-      margin-top: 4em; } }
-header .logoText {
-  position: relative; }
 
 .logo-title, .tagline {
   margin: 0; }
@@ -780,67 +764,85 @@ header .logoText {
   color: #ffa631;
   line-height: 2em;
   position: relative; }
-  @media only screen and (min-width: 768px) and (max-width: 979px) {
+  @media only screen and (min-width: 768px) {
     .logo-title {
       display: block;
-      padding-top: 3.3em; } }
-  @media only screen and (min-width: 979px) {
-    .logo-title {
-      padding-top: 3.7em; } }
+      padding-top: 4.4em; } }
   .logo-title .club {
     font-size: 4.6em;
     line-height: 1em; }
-    @media only screen and (min-width: 768px) and (max-width: 979px) {
+    @media only screen and (min-width: 768px) {
       .logo-title .club {
-        font-size: 4.3em; } }
-    @media only screen and (min-width: 979px) {
-      .logo-title .club {
-        font-size: 3.5em; } }
+        font-size: 4.2em; } }
   .logo-title .house {
     font-size: 3.2em; }
-    @media only screen and (min-width: 768px) and (max-width: 979px) {
+    @media only screen and (min-width: 768px) {
       .logo-title .house {
-        font-size: 3em; } }
-    @media only screen and (min-width: 979px) {
-      .logo-title .house {
-        font-size: 2.5em; } }
+        font-size: 2.9em; } }
 
 .tagline {
-  color: white;
   font-family: "Muli", sans-serif;
   font-size: 2em;
   font-weight: 400;
+  margin: 0.5em 0 1em;
   line-height: 1.2em; }
   @media only screen and (min-width: 768px) {
     .tagline {
       font-size: 1.5em;
-      left: 0;
+      left: 330px;
       position: absolute;
       top: 2em; } }
   @media only screen and (min-width: 979px) {
     .tagline {
       top: 2.6em; } }
 
-.notecard {
-  margin-top: 1em;
-  margin-bottom: 1em; }
-  .notecard:last-child {
-    margin-top: 1em;
-    margin-bottom: 2em; }
-  .notecard .header {
-    margin: 0;
-    padding: 0.2em 0 0.1em 0.5em; }
-  .notecard .body {
-    padding: 0 0.5em 0.5em; }
-    @media only screen and (min-width: 768px) {
-      .notecard .body {
-        padding: 0 1em 1em; } }
+.nav-content {
+  font-size: 1.2em;
+  margin: 1em auto;
+  text-align: center; }
+  .nav-content a:link, .nav-content a:visited {
+    color: #1f2e49;
+    padding: 0.5em; }
+
+.row-wrap {
+  background-repeat: none;
+  background-size: cover;
+  border-bottom: 0.3rem solid #1f2e49; }
+
+.row-content {
+  min-height: 500px;
+  padding: 1em 0;
+  position: relative; }
+
+@media only screen and (min-width: 768px) {
+  .row-header, .row-body {
+    position: absolute; } }
+
+@media only screen and (min-width: 768px) {
+  .row-header {
+    top: 1em;
+    left: 0; } }
+
+@media only screen and (min-width: 768px) {
+  .row-body {
+    bottom: 1em;
+    right: 0;
+    width: 50%; } }
+
+.what-wrap {
+  background-image: url(../img/grayscale1.jpg); }
+
+.why-wrap {
+  background-image: url(../img/grayscale3.jpg); }
+
+.join-wrap {
+  background-image: url(../img/grayscale2.jpg); }
 
 .email-submit {
   text-align: center; }
 
-footer {
-  text-align: center;
-  margin: 2em 0 4em; }
-  footer a:first-child {
+.footer-content {
+  margin: 2em auto 3em;
+  text-align: center; }
+  .footer-content a:first-child {
     margin-right: 2em; }

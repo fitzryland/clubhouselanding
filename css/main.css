@@ -702,7 +702,8 @@ header, nav, .row-wrap, footer {
 
 .row-header, .row-body {
   background-color: #fafafa;
-  border-bottom: 0.3rem solid #ffa631;
+  border-bottom: 0.3rem solid #f39c12;
+  border-radius: 0.3rem;
   padding: 1em; }
 
 * {
@@ -732,7 +733,7 @@ a:link, a:visited {
   text-decoration: none; }
 
 header {
-  border-bottom: 0.3rem solid #1f2e49; }
+  border-bottom: 0.3rem solid #16a085; }
 
 .header-content {
   margin: 0 auto;
@@ -761,7 +762,7 @@ header {
   margin: 0; }
 
 .logo-title {
-  color: #ffa631;
+  color: #f39c12;
   line-height: 2em;
   position: relative; }
   @media only screen and (min-width: 768px) {
@@ -807,7 +808,7 @@ header {
 .row-wrap {
   background-repeat: none;
   background-size: cover;
-  border-bottom: 0.3rem solid #1f2e49; }
+  border-bottom: 0.3rem solid #16a085; }
 
 .row-content {
   min-height: 500px;
@@ -839,7 +840,18 @@ header {
   background-image: url(../img/grayscale2.jpg); }
 
 .email-submit {
-  text-align: center; }
+  text-align: center;
+  margin: 2em 0 1.5em; }
+
+input[type=text], input[type=submit] {
+  background-color: transparent;
+  border: 0.1rem solid #16a085;
+  border-radius: 0.3rem;
+  padding: 0.2em 0.7em;
+  text-color: #1f2e49; }
+  input[type=text]:focus, input[type=submit]:focus {
+    border-color: #f39c12;
+    outline: 0; }
 
 .footer-content {
   margin: 2em auto 3em;

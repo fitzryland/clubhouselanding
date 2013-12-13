@@ -211,10 +211,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 a:link, a:visited {
+	color: $secondarAccentColor;
 	text-decoration: none;
 }
 a:hover, a:active {
-
+	color: $primaryAccentColor;
 }
 // 88  88 888888    db    8888b.  888888 88""Yb
 // 88  88 88__     dPYb    8I  Yb 88__   88__dP
@@ -222,7 +223,7 @@ a:hover, a:active {
 // 88  88 888888 dP""""Yb 8888Y"  888888 88  Yb
 header {
 	@extend %wrap;
-	border-bottom: $border-width solid $secondarAccentColor;
+	border-bottom: $border-width*2 solid $secondarAccentColor;
 }
 .header-content {
 	@include group();
@@ -293,6 +294,7 @@ header {
 }
 nav {
 	@extend %wrap;
+	margin: 2em 0 1em;
 }
 .nav-content {
 	@extend %wrap-content;
@@ -300,7 +302,7 @@ nav {
 	margin: 1em auto;
 	text-align: center;
 	a:link, a:visited {
-		color: $text-color;
+		// color: $text-color;
 		padding: 0.5em;
 	}
 }
@@ -312,7 +314,7 @@ nav {
 	@extend %wrap;
 	background-repeat: none;
 	background-size: cover;
-	border-bottom: $border-width solid $secondarAccentColor;
+	border-bottom: $border-width*2 solid $secondarAccentColor;
 }
 .row-content {
 	@extend %wrap-content;

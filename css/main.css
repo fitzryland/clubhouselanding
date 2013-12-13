@@ -730,10 +730,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 a:link, a:visited {
+  color: #16a085;
   text-decoration: none; }
 
+a:hover, a:active {
+  color: #f39c12; }
+
 header {
-  border-bottom: 0.3rem solid #16a085; }
+  border-bottom: 0.6rem solid #16a085; }
 
 .header-content {
   margin: 0 auto;
@@ -797,18 +801,20 @@ header {
     .tagline {
       top: 2.6em; } }
 
+nav {
+  margin: 2em 0 1em; }
+
 .nav-content {
   font-size: 1.2em;
   margin: 1em auto;
   text-align: center; }
   .nav-content a:link, .nav-content a:visited {
-    color: #1f2e49;
     padding: 0.5em; }
 
 .row-wrap {
   background-repeat: none;
   background-size: cover;
-  border-bottom: 0.3rem solid #16a085; }
+  border-bottom: 0.6rem solid #16a085; }
 
 .row-content {
   min-height: 500px;
